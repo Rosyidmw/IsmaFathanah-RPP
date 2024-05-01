@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    
+}
+
+/* Nav bar */
+
+header {
+    background-color: rgb(158, 135, 222);
+ 
+    padding: 20px 0;
+
+    text-align: center;
+    opacity: 0.9;
+}
+
+
+
+header img {
+    margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+
+
+nav {
+    display: flex;
+    background-color:  rgb(138, 115, 200);
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    height: 30px;
+    align-items: center;
+    color: rgb(6, 131, 131);
+}
+
+nav .logo {
+    z-index: 5;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1em;
+    color: rgb(16, 17, 17);
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    color: aliceblue;
+}
+
+/* Hamburger Menu */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    opacity: 0;
+    left: -5px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 6;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all 0.5s;
+    z-index: 5;
+}
+
+
+/* Hamburger menu animation */
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+main {
+    background-image: url(../assets/ungu.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 10px;
+    position: absolute;
+}
+
+
+
+/* Responsive Breakpoint */
+/* Ukuran Table */
+@media screen and (max-width: 768px){
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* Ukuran mobile */
+
+@media screen and (max-width: 576px){
+    nav ul {
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        top: 217px;
+        height: 110vh;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgb(11, 241, 241);
+        background-image: url(../assets/image.png);
+        background-size: cover;
+        z-index: 2;
+        width: 100%;
+        transform: translateY(-200%);
+        transition: all 1.2s;
+    }
+
+    nav ul.slide {
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    main {
+        z-index: -3;
+    }
+
+    header {
+        color:black;
+        font-weight: bolder;
+    }
+
+    header img {
+        width: 90px;
+        height: 90px;
+        top: 0;
+        right: 0;
+    }
+
+   
+}
+
+.tabel tr td{
+    padding: 10px;
+    
+}
+
+.gambar {
+    margin-left: 30px;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    border-radius: 100px;
+    background-image: url(../assets/isma.jpg);
+}
+
+.kosong {
+    padding: 30px;
+}

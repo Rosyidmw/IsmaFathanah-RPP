@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: rgb(124, 211, 249);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 20px; */
+}
+
+.container {
+    display: grid;
+}
+
+#ucapan {
+    font-weight: bold;
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 310px;
+    background-image: url(../assets/sd.png);
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+.features {
+    background-color: #000;
+    color: white;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    text-align: left;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(../assets/image.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(../assets/tugas.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.feature-1 a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    top: 0;
+    margin: auto;
+}
+
+.feature-2 a {
+    text-decoration: none;
+    color: rgb(1, 1, 0);
+}
+
+.feature-1 .arab {
+    font-size: 1em;
+   
+}
+
+.feature-2 .arab {
+    font-size: 1em;
+   
+}
+
+/* Navigasi */
+
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.menu .brand {
+    font-size: 1.2em;
+    color: rgb(20, 20, 20);
+}
+
+.menu ul {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a {
+    display: block;
+    background-color: rgb(118, 72, 244);
+    text-decoration: none;
+    text-align: center;
+    color: rgb(241, 250, 250);
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+/* Responsive Breakpoint */
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .menu {
+        order: inherit;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr;
+        /* display: none; */
+    }
+    .brand {
+        display: none;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 1.3em;
+        padding: 10px;
+    }
+
+    .header {
+        grid-template-areas: 
+        'hero'
+        'feature-1'
+        'feature-2';
+    }
+
+    .features {
+        height: 100vh;
+        width: auto;
+        font-size: 2em;
+    }
+
+   .menu a {
+    background-color: rgb(18, 144, 102);
+   }
+
+   .tugas {
+    background-color: rgb(18, 144, 102);
+    font-size: 0.9em;
+   }
+}
+
+button {
+    background-color: rgb(118, 72, 244);
+    font-size: 1em;
+    border: 0;
+    color: rgb(241, 250, 250);
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+/* Pop UP */
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .konten {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .konten {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
